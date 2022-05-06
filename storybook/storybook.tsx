@@ -1,6 +1,5 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { getStorybookUI, configure } from "@storybook/react-native"
-import { initFonts } from "../app/theme/fonts"
 
 declare let module
 
@@ -16,16 +15,5 @@ const StorybookUI = getStorybookUI({
 })
 
 export function StorybookUIRoot() {
-  useEffect(() => {
-    ;(async () => {
-      await initFonts() // expo only
-      if (typeof __TEST__ === "undefined" || !__TEST__) {
-        const Reactotron = require("../app/services/reactotron")
-        const reactotron = new Reactotron.Reactotron()
-        reactotron.setup()
-      }
-    })()
-  }, [])
-
   return <StorybookUI />
 }

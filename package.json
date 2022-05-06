@@ -44,9 +44,6 @@
     "react-native-keychain": "6.2.0",
     "react-native-safe-area-context": "3.1.8",
     "react-native-screens": "3.8.0",
-    "reactotron-mst": "3.1.4",
-    "reactotron-react-js": "^3.3.7",
-    "reactotron-react-native": "5.0.1",
     "validate.js": "0.13.1"
   },
   "devDependencies": {
@@ -92,7 +89,6 @@
     "react-dom": "^17.0.2",
     "react-native-clean-project": "^3.6.3",
     "react-native-web": "^0.16.3",
-    "reactotron-core-client": "^2.8.10",
     "solidarity": "2.3.1",
     "ts-jest": "26",
     "typescript": "4.2.3"
