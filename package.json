@@ -32,6 +32,7 @@
     "@react-navigation/native": "~6.0.1",
     "@react-navigation/native-stack": "^6.0.2",
     "@react-navigation/stack": "~6.0.1",
+    "@reduxjs/toolkit": "^1.8.1",
     "apisauce": "2.0.0",
     "expo": "^45.0.1",
     "expo-linear-gradient": "^11.3.0",
@@ -44,6 +45,7 @@
     "react-native-keychain": "6.2.0",
     "react-native-safe-area-context": "3.1.8",
     "react-native-screens": "3.8.0",
+    "react-redux": "^8.0.1",
     "validate.js": "0.13.1"
   },
   "devDependencies": {
@@ -188,6 +190,13 @@
       "react/no-unescaped-entities": 0,
       "react/prop-types": "off",
       "space-before-function-paren": 0
-    }
+    },"overrides": [
+      { 
+        "files": [ "app/store/**/types.ts" ],
+        "rules": {
+          "quotes": [ 2, "camelcase" ]
+        }
+      }
+    ]
   }
 }

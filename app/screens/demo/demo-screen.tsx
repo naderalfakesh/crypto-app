@@ -12,8 +12,8 @@ import {
 } from "../../components"
 import { NavigatorParamList } from "../../navigators"
 import { color, spacing } from "../../theme"
-import { Api } from "../../services/api"
 import { save } from "../../utils/storage"
+import { useServerStatusQuery } from "../../store/serverSlice"
 export const logoIgnite = require("./logo-ignite.png")
 export const heart = require("./heart.png")
 
@@ -94,15 +94,12 @@ const platformCommand = Platform.select({
 
 export const DemoScreen: FC<StackScreenProps<NavigatorParamList, "demo">> = ({ navigation }) => {
   const goBack = () => navigation.goBack()
+  const { data, isLoading, isFetching, isError } = useServerStatusQuery(undefined)
+
+  console.log({ data, isLoading, isFetching, isError })
 
   const demoReactotron = React.useMemo(
     () => async () => {
-      // make an API call for the demo
-      // Don't do API like this, use store's API
-      const demo = new Api()
-      demo.setup()
-      demo.getUser("1")
-      // Let's do some async storage stuff
       await save("Cool Name", "Boaty McBoatface")
     },
     [],
