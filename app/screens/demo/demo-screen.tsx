@@ -116,7 +116,7 @@ export const DemoScreen: FC<StackScreenProps<NavigatorParamList, "demo">> = ({ n
           style={HEADER}
           titleStyle={HEADER_TITLE}
         />
-        <Text style={TITLE} preset="header" tx="demoScreen.title" />
+        <Text style={TITLE} tx="demoScreen.title" />
         <Text style={TAGLINE} tx="demoScreen.tagLine" />
         <BulletItem text="Integrated here, Navigation with State, TypeScript, Storybook, Solidarity, and i18n." />
         <BulletItem
