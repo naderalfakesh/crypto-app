@@ -22,24 +22,49 @@ export const presets = {
   default: BASE,
 
   /**
-   * A bold version of the default text.
+   * size 12 height 14
    */
-  bold: { ...BASE, fontWeight: "bold" } as TextStyle,
+  "body-12-14": { ...BASE, fontSize: 12, lineHeight: 14 } as TextStyle,
 
   /**
-   * Large headers.
+   * size 14 height 16
    */
-  header: { ...BASE, fontSize: 24, fontWeight: "bold" } as TextStyle,
+  "body-14-16": { ...BASE, fontSize: 14, lineHeight: 16 } as TextStyle,
 
   /**
-   * Field labels that appear on forms above the inputs.
+   * size 16 height 20
    */
-  fieldLabel: { ...BASE, fontSize: 13, color: color.dim } as TextStyle,
+  "body-16-20": { ...BASE, fontSize: 16, lineHeight: 20 } as TextStyle,
 
   /**
-   * A smaller piece of secondary information.
+   * size 10 height 12
    */
-  secondary: { ...BASE, fontSize: 9, color: color.dim } as TextStyle,
+  "header-10-12": { ...BASE, fontSize: 10, lineHeight: 12, fontWeight: "500" } as TextStyle,
+
+  /**
+   * size 14 height 18
+   */
+  "header-14-18": { ...BASE, fontSize: 14, lineHeight: 18, fontWeight: "600" } as TextStyle,
+
+  /**
+   * size 16 height 20
+   */
+  "header-16-20": { ...BASE, fontSize: 16, lineHeight: 20, fontWeight: "500" } as TextStyle,
+
+  /**
+   * size 20 height 22
+   */
+  "header-20-22": { ...BASE, fontSize: 20, lineHeight: 22, fontWeight: "500" } as TextStyle,
+
+  /**
+   * size 26 height 32
+   */
+  "header-26-32": { ...BASE, fontSize: 26, lineHeight: 32, fontWeight: "600" } as TextStyle,
+
+  /**
+   * size 28 height 30
+   */
+  "header-28-30": { ...BASE, fontSize: 28, lineHeight: 30, fontWeight: "600" } as TextStyle,
 }
 
 /**
