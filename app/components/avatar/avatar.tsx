@@ -1,19 +1,18 @@
 import * as React from "react"
-import { StyleProp, ImageStyle, View, ViewStyle, ImageURISource } from "react-native"
+import { StyleProp, ImageStyle, View, ViewStyle, ImageURISource, StyleSheet } from "react-native"
 import { color } from "../../theme"
 import { AutoImage } from "../auto-image/auto-image"
 
-const CONTAINER_SIZE = 50
-const IMAGE_SIZE = 40
+const IMAGE_SIZE = 50
 
 const CONTAINER: ViewStyle = {
-  width: CONTAINER_SIZE,
-  height: CONTAINER_SIZE,
+  width: IMAGE_SIZE,
+  height: IMAGE_SIZE,
   overflow: "hidden",
-  borderRadius: CONTAINER_SIZE / 2,
+  borderRadius: IMAGE_SIZE / 2,
   justifyContent: "center",
   alignItems: "center",
-  borderWidth: 1,
+  borderWidth: StyleSheet.hairlineWidth,
   borderColor: color.white,
 }
 
