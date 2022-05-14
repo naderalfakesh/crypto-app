@@ -15,6 +15,9 @@ export const styles = StyleSheet.create({
     padding: PADDING,
     backgroundColor: BG_COLOR,
   },
+  cardPressed: {
+    backgroundColor: "rgba(255,255,255,0.04)",
+  },
   icon: {
     width: ICON_SIZE,
     height: ICON_SIZE,
@@ -37,9 +40,9 @@ export const styles = StyleSheet.create({
   },
 })
 
-export type THEME = "purple" | "blue" | "grey" | "torque" | "green" | "red"
+export type Theme = "purple" | "blue" | "grey" | "torque" | "green" | "red"
 
-export const getThemeStyles = (color: THEME) => {
+export const getThemeStyles = (color: Theme) => {
   switch (color) {
     case "purple":
       return StyleSheet.create({

@@ -1,19 +1,20 @@
 import { BlurView } from "@react-native-community/blur"
 import * as React from "react"
-import { StyleProp, View, ViewStyle, TouchableOpacity } from "react-native"
+import { StyleProp, View, ViewStyle, Pressable } from "react-native"
 import { Shadow } from "react-native-shadow-2"
 import { Text } from "../text/text"
-import { BG_COLOR, BORDER_RADIUS, THEME, getThemeStyles, styles } from "./styles"
-
+import { BG_COLOR, BORDER_RADIUS, Theme, getThemeStyles, styles } from "./styles"
+import { SimpleLineChart } from "../simple-line-chart/simple-line-chart"
 export interface CoinCardProps {
-  theme: THEME
+  theme: Theme
+  data: Array<number>
   style?: StyleProp<ViewStyle>
 }
 
 /**
  * A card for main coins on the top of home screen
  */
-export const CoinCard = function CoinCard({ style, theme }: CoinCardProps) {
+export const CoinCard = function CoinCard({ style, data, theme }: CoinCardProps) {
   const themeStyles = getThemeStyles(theme)
   return (
     <Shadow
@@ -23,8 +24,8 @@ export const CoinCard = function CoinCard({ style, theme }: CoinCardProps) {
       radius={BORDER_RADIUS}
       distance={5}
     >
-      <TouchableOpacity
-        style={[styles.container, style]}
+      <Pressable
+        style={({ pressed }) => [styles.container, pressed && styles.cardPressed, style]}
         onPress={() => console.log("card pressed")}
       >
         <>
@@ -38,8 +39,14 @@ export const CoinCard = function CoinCard({ style, theme }: CoinCardProps) {
           <View style={[styles.icon, themeStyles.icon]}>
             <Text>B</Text>
           </View>
+          <SimpleLineChart
+            data={data}
+            theme={theme}
+            lineWidth={2}
+            contentInset={{ right: 2, left: 2 }}
+          />
         </>
-      </TouchableOpacity>
+      </Pressable>
     </Shadow>
   )
 }

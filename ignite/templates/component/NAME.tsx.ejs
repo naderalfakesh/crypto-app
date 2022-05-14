@@ -1,17 +1,7 @@
 import * as React from "react"
-import { StyleProp, TextStyle, View, ViewStyle } from "react-native"
+import { StyleProp, View, ViewStyle, StyleSheet } from "react-native"
 import { color, typography } from "../../theme"
 import { Text } from "../text/text"
-
-const CONTAINER: ViewStyle = {
-  justifyContent: "center",
-}
-
-const TEXT: TextStyle = {
-  fontFamily: typography.primary,
-  fontSize: 14,
-  color: color.primary,
-}
 
 export interface <%= props.pascalCaseName %>Props {
   /**
@@ -23,13 +13,23 @@ export interface <%= props.pascalCaseName %>Props {
 /**
  * Describe your component here
  */
-export const <%= props.pascalCaseName %> = function <%= props.pascalCaseName %>(props: <%= props.pascalCaseName %>Props) {
-  const { style } = props
-  const styles = Object.assign({}, CONTAINER, style)
+export const <%= props.pascalCaseName %> = function <%= props.pascalCaseName %>({ style }: <%= props.pascalCaseName %>Props) {
+  
 
   return (
-    <View style={styles}>
-      <Text style={TEXT}>Hello</Text>
+    <View style={[styles.container, style]}>
+      <Text style={styles.text}>Hello</Text>
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    justifyContent: "center",
+  },
+  text: {
+    fontFamily: typography.primary,
+    fontSize: 14,
+    color: color.primary,
+  },
+})
