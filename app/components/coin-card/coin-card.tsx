@@ -32,7 +32,7 @@ export const CoinCard = function CoinCard({ style, data, theme }: CoinCardProps)
           <View style={[styles.blurContent, themeStyles.blur]} />
           <BlurView
             blurType="light"
-            blurAmount={40}
+            blurAmount={35}
             reducedTransparencyFallbackColor={BG_COLOR}
             style={styles.blurView}
           />
@@ -51,7 +51,7 @@ export const CoinCard = function CoinCard({ style, data, theme }: CoinCardProps)
             data={data}
             theme={theme}
             lineWidth={2}
-            contentInset={{ right: 2, left: 2 }}
+            contentInset={{ top: 5, right: 2, left: 2 }}
           />
         </>
       </Pressable>

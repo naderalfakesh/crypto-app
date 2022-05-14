@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
     backgroundColor: "rgba(255,255,255,0.04)",
   },
   header: { flexDirection: "row" },
-  subtitle: { color: "rgba(255,255,255,0.6)" },
+  subtitle: { color: "rgba(255,255,255,0.6)", marginTop: 2 },
   icon: {
     width: ICON_SIZE,
     height: ICON_SIZE,
@@ -51,38 +51,38 @@ export const getThemeStyles = (color: Theme) => {
     case "purple":
       return StyleSheet.create({
         icon: { backgroundColor: "rgba(190, 26, 247, 1)" },
-        blur: { backgroundColor: "rgba(190, 26, 247, 1)" },
+        blur: { backgroundColor: "rgba(190, 26, 247, 0.8)" },
       })
     case "blue":
       return StyleSheet.create({
         icon: { backgroundColor: "rgba(75, 112, 255, 1)" },
-        blur: { backgroundColor: "rgba(75, 112, 255, 1)" },
+        blur: { backgroundColor: "rgba(75, 112, 255,  0.8)" },
       })
     case "grey":
       return StyleSheet.create({
         icon: { backgroundColor: "rgba(69, 69, 99, 1)" },
-        blur: { backgroundColor: "rgba(69, 69, 99, 1)" },
+        blur: { backgroundColor: "rgba(69, 69, 99,  0.8)" },
       })
     case "torque":
       return StyleSheet.create({
         icon: { backgroundColor: "rgba(18, 118, 167, 1)" },
-        blur: { backgroundColor: "rgba(18, 118, 167, 1)" },
+        blur: { backgroundColor: "rgba(18, 118, 167,  0.8)" },
       })
     case "green":
       return StyleSheet.create({
         icon: { backgroundColor: "rgba(1, 127, 4, 1)" },
-        blur: { backgroundColor: "rgba(1, 127, 4, 1)" },
+        blur: { backgroundColor: "rgba(1, 127, 4,  0.8)" },
       })
     case "red":
       return StyleSheet.create({
         icon: { backgroundColor: "rgba(249, 107, 75, 1)" },
-        blur: { backgroundColor: "rgba(249, 107, 75, 1)" },
+        blur: { backgroundColor: "rgba(249, 107, 75,  0.8)" },
       })
 
     default:
       return StyleSheet.create({
         icon: { backgroundColor: "rgba(190, 26, 247, 1)" },
-        blur: { backgroundColor: "rgba(190, 26, 247, 1)" },
+        blur: { backgroundColor: "rgba(190, 26, 247,  0.8)" },
       })
   }
 }

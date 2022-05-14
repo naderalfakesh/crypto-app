@@ -5,11 +5,9 @@ import { styles, getThemeStyles, Theme } from "./styles"
 
 interface ShadowProps {
   line?: any
-
-  color: string
 }
-const Shadow = ({ line, color }: ShadowProps) => (
-  <Path key={"shadow"} y={2} d={line} fill={"none"} strokeWidth={4} stroke={color} />
+const Shadow = ({ line }: ShadowProps) => (
+  <Path key={"shadow"} y={2} d={line} fill={"none"} strokeWidth={4} stroke="rgba(0, 0, 0, 0.1)" />
 )
 
 export interface SimpleLineChartProps {
@@ -38,7 +36,7 @@ export const SimpleLineChart = function SimpleLineChart({
       }}
       contentInset={contentInset}
     >
-      <Shadow color={themeStyles.lineShadow.backgroundColor} />
+      <Shadow />
     </LineChart>
   )
 }
