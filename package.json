@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.17.3",
+    "@react-native-community/blur": "^3.6.0",
     "@react-navigation/native": "~6.0.1",
     "@react-navigation/native-stack": "^6.0.2",
     "@react-navigation/stack": "~6.0.1",
@@ -45,6 +46,8 @@
     "react-native-keychain": "6.2.0",
     "react-native-safe-area-context": "3.1.8",
     "react-native-screens": "3.8.0",
+    "react-native-shadow-2": "^6.0.5",
+    "react-native-svg": "^12.3.0",
     "react-redux": "^8.0.1",
     "validate.js": "0.13.1"
   },
@@ -190,11 +193,17 @@
       "react/no-unescaped-entities": 0,
       "react/prop-types": "off",
       "space-before-function-paren": 0
-    },"overrides": [
-      { 
-        "files": [ "app/store/**/types.ts" ],
+    },
+    "overrides": [
+      {
+        "files": [
+          "app/store/**/types.ts"
+        ],
         "rules": {
-          "quotes": [ 2, "camelcase" ]
+          "quotes": [
+            2,
+            "camelcase"
+          ]
         }
       }
     ]
