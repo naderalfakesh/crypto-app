@@ -5,7 +5,7 @@ const PADDING = 16
 const CARD_HEIGHT = 160
 const ICON_SIZE = 36
 export const BORDER_RADIUS = 18
-export const BG_COLOR = "rgba(255,255,255,0.12)"
+export const BG_COLOR = "rgba(255,255,255,1)"
 
 export const styles = StyleSheet.create({
   container: {
@@ -13,11 +13,13 @@ export const styles = StyleSheet.create({
     height: CARD_HEIGHT,
     borderRadius: BORDER_RADIUS,
     padding: PADDING,
-    backgroundColor: BG_COLOR,
+    backgroundColor: "transparent",
   },
   cardPressed: {
     backgroundColor: "rgba(255,255,255,0.04)",
   },
+  header: { flexDirection: "row" },
+  subtitle: { color: "rgba(255,255,255,0.6)" },
   icon: {
     width: ICON_SIZE,
     height: ICON_SIZE,
@@ -25,11 +27,13 @@ export const styles = StyleSheet.create({
     overflow: "hidden",
     justifyContent: "center",
     alignItems: "center",
+    marginRight: 8,
   },
   blurContent: {
     position: "absolute",
     width: BLUR_SIZE,
     height: BLUR_SIZE,
+    borderRadius: BLUR_SIZE * 0.5,
     alignSelf: "center",
     top: CARD_HEIGHT * 0.5 - BLUR_SIZE * 0.5,
   },

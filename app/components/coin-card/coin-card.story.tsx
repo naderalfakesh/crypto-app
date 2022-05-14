@@ -9,13 +9,13 @@ storiesOf("CoinCard", module)
   .addDecorator((fn) => <StoryScreen>{fn()}</StoryScreen>)
   .add("Style Presets", () => (
     <Story>
-      <UseCase text="Purple theme" style={{ backgroundColor: "#8d99ae" }} noBackground>
+      <UseCase text="Purple theme" style={{ backgroundColor: "rgba(29, 28, 67, 1)" }} noBackground>
         <CoinCard theme="purple" data={data} />
       </UseCase>
-      <UseCase text="Blue theme" style={{ backgroundColor: "#8d99ae" }} noBackground>
+      <UseCase text="Blue theme" style={{ backgroundColor: "rgba(29, 28, 67, 1)" }} noBackground>
         <CoinCard theme="blue" data={data} />
       </UseCase>
-      <UseCase text="Red theme" style={{ backgroundColor: "#8d99ae" }} noBackground>
+      <UseCase text="Red theme" style={{ backgroundColor: "rgba(29, 28, 67, 1)" }} noBackground>
         <CoinCard theme="red" data={data} />
       </UseCase>
     </Story>

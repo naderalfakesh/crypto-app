@@ -31,13 +31,21 @@ export const CoinCard = function CoinCard({ style, data, theme }: CoinCardProps)
         <>
           <View style={[styles.blurContent, themeStyles.blur]} />
           <BlurView
-            blurType="ultraThinMaterial"
-            blurAmount={10}
+            blurType="light"
+            blurAmount={40}
             reducedTransparencyFallbackColor={BG_COLOR}
             style={styles.blurView}
           />
-          <View style={[styles.icon, themeStyles.icon]}>
-            <Text>B</Text>
+          <View style={styles.header}>
+            <View style={[styles.icon, themeStyles.icon]}>
+              <Text>B</Text>
+            </View>
+            <View>
+              <Text preset="header-16-20">Bitcoin</Text>
+              <Text preset="body-12-14" style={styles.subtitle}>
+                BTC
+              </Text>
+            </View>
           </View>
           <SimpleLineChart
             data={data}
