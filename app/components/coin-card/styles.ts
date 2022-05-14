@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native"
+import { color } from "../../theme"
 
 const BLUR_SIZE = 60
 const PADDING = 16
@@ -41,6 +42,17 @@ export const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
     borderRadius: BORDER_RADIUS,
     overflow: "hidden",
+  },
+  footer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "flex-end",
+  },
+  increase: {
+    color: "rgba(4, 220, 0, 1)",
+  },
+  decrease: {
+    color: "rgba(232, 80, 58, 1)",
   },
 })
 

@@ -6,15 +6,29 @@ import { Text } from "../text/text"
 import { BG_COLOR, BORDER_RADIUS, Theme, getThemeStyles, styles } from "./styles"
 import { SimpleLineChart } from "../simple-line-chart/simple-line-chart"
 export interface CoinCardProps {
+  style?: StyleProp<ViewStyle>
   theme: Theme
   data: Array<number>
-  style?: StyleProp<ViewStyle>
+  onPress?: () => void
+  title: string
+  subtitle: string
+  price: string
+  percentage: string
 }
 
 /**
  * A card for main coins on the top of home screen
  */
-export const CoinCard = function CoinCard({ style, data, theme }: CoinCardProps) {
+export const CoinCard = function CoinCard({
+  style,
+  data,
+  theme,
+  onPress,
+  title,
+  subtitle,
+  price,
+  percentage,
+}: CoinCardProps) {
   const themeStyles = getThemeStyles(theme)
   return (
     <Shadow
@@ -26,7 +40,7 @@ export const CoinCard = function CoinCard({ style, data, theme }: CoinCardProps)
     >
       <Pressable
         style={({ pressed }) => [styles.container, pressed && styles.cardPressed, style]}
-        onPress={() => console.log("card pressed")}
+        onPress={onPress}
       >
         <>
           <View style={[styles.blurContent, themeStyles.blur]} />
@@ -37,13 +51,14 @@ export const CoinCard = function CoinCard({ style, data, theme }: CoinCardProps)
             style={styles.blurView}
           />
           <View style={styles.header}>
+            {/* Replace with icon component */}
             <View style={[styles.icon, themeStyles.icon]}>
               <Text>B</Text>
             </View>
             <View>
-              <Text preset="header-16-20">Bitcoin</Text>
+              <Text preset="header-16-20">{title}</Text>
               <Text preset="body-12-14" style={styles.subtitle}>
-                BTC
+                {subtitle}
               </Text>
             </View>
           </View>
@@ -51,8 +66,15 @@ export const CoinCard = function CoinCard({ style, data, theme }: CoinCardProps)
             data={data}
             theme={theme}
             lineWidth={2}
-            contentInset={{ top: 5, right: 2, left: 2 }}
+            contentInset={{ top: 5, right: 2, bottom: 5, left: 2 }}
           />
+          <View style={styles.footer}>
+            <Text preset="header-14-18">{price}</Text>
+            {/* todo: replace increase with condition for increase and decrease */}
+            <Text preset="body-12-14" style={styles.increase}>
+              {percentage}
+            </Text>
+          </View>
         </>
       </Pressable>
     </Shadow>

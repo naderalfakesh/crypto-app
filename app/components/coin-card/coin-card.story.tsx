@@ -10,13 +10,34 @@ storiesOf("CoinCard", module)
   .add("Style Presets", () => (
     <Story>
       <UseCase text="Purple theme" style={{ backgroundColor: "rgba(29, 28, 67, 1)" }} noBackground>
-        <CoinCard theme="purple" data={data} />
+        <CoinCard
+          theme="purple"
+          data={data}
+          title="Bitcoin"
+          subtitle="BTC"
+          price="$6780"
+          percentage="+ 10.32%"
+        />
       </UseCase>
       <UseCase text="Blue theme" style={{ backgroundColor: "rgba(29, 28, 67, 1)" }} noBackground>
-        <CoinCard theme="blue" data={data} />
+        <CoinCard
+          theme="blue"
+          data={data}
+          title="Bitcoin"
+          subtitle="BTC"
+          price="$6780"
+          percentage="+ 10.32%"
+        />
       </UseCase>
       <UseCase text="Red theme" style={{ backgroundColor: "rgba(29, 28, 67, 1)" }} noBackground>
-        <CoinCard theme="red" data={data} />
+        <CoinCard
+          theme="red"
+          data={data}
+          title="Bitcoin"
+          subtitle="BTC"
+          price="$6780"
+          percentage="+ 10.32%"
+        />
       </UseCase>
     </Story>
   ))
