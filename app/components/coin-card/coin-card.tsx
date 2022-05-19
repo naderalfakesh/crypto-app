@@ -3,17 +3,18 @@ import * as React from "react"
 import { StyleProp, View, ViewStyle, Pressable } from "react-native"
 import { Shadow } from "react-native-shadow-2"
 import { Text } from "../text/text"
-import { BG_COLOR, BORDER_RADIUS, Theme, getThemeStyles, styles } from "./styles"
+import { BG_COLOR, BORDER_RADIUS, getThemeStyles, styles } from "./styles"
 import { SimpleLineChart } from "../simple-line-chart/simple-line-chart"
+import { CoinTheme } from "../../theme"
 export interface CoinCardProps {
   style?: StyleProp<ViewStyle>
-  theme: Theme
+  theme: CoinTheme
   data: Array<number>
   onPress?: () => void
   title: string
   subtitle: string
   price: string
-  percentage: string
+  change: string
 }
 
 /**
@@ -27,7 +28,7 @@ export const CoinCard = function CoinCard({
   title,
   subtitle,
   price,
-  percentage,
+  change,
 }: CoinCardProps) {
   const themeStyles = getThemeStyles(theme)
   return (
@@ -45,8 +46,8 @@ export const CoinCard = function CoinCard({
         <>
           <View style={[styles.blurContent, themeStyles.blur]} />
           <BlurView
-            blurType="light"
-            blurAmount={35}
+            blurType="regular"
+            blurAmount={100}
             reducedTransparencyFallbackColor={BG_COLOR}
             style={styles.blurView}
           />
@@ -72,7 +73,7 @@ export const CoinCard = function CoinCard({
             <Text preset="header-14-18">{price}</Text>
             {/* todo: replace increase with condition for increase and decrease */}
             <Text preset="body-12-14" style={styles.increase}>
-              {percentage}
+              {change}
             </Text>
           </View>
         </>

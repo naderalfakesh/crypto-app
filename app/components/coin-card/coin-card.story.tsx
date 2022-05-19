@@ -16,7 +16,7 @@ storiesOf("CoinCard", module)
           title="Bitcoin"
           subtitle="BTC"
           price="$6780"
-          percentage="+ 10.32%"
+          change="+ 10.32%"
         />
       </UseCase>
       <UseCase text="Blue theme" style={{ backgroundColor: "rgba(29, 28, 67, 1)" }} noBackground>
@@ -26,7 +26,7 @@ storiesOf("CoinCard", module)
           title="Bitcoin"
           subtitle="BTC"
           price="$6780"
-          percentage="+ 10.32%"
+          change="+ 10.32%"
         />
       </UseCase>
       <UseCase text="Red theme" style={{ backgroundColor: "rgba(29, 28, 67, 1)" }} noBackground>
@@ -36,7 +36,7 @@ storiesOf("CoinCard", module)
           title="Bitcoin"
           subtitle="BTC"
           price="$6780"
-          percentage="+ 10.32%"
+          change="+ 10.32%"
         />
       </UseCase>
     </Story>

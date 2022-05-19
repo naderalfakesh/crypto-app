@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native"
-import { color } from "../../theme"
+import { CoinTheme } from "../../theme"
 
 const BLUR_SIZE = 60
 const PADDING = 16
@@ -14,7 +14,6 @@ export const styles = StyleSheet.create({
     height: CARD_HEIGHT,
     borderRadius: BORDER_RADIUS,
     padding: PADDING,
-    backgroundColor: "transparent",
   },
   cardPressed: {
     backgroundColor: "rgba(255,255,255,0.04)",
@@ -56,9 +55,7 @@ export const styles = StyleSheet.create({
   },
 })
 
-export type Theme = "purple" | "blue" | "grey" | "torque" | "green" | "red"
-
-export const getThemeStyles = (color: Theme) => {
+export const getThemeStyles = (color: CoinTheme) => {
   switch (color) {
     case "purple":
       return StyleSheet.create({
