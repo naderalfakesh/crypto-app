@@ -1,8 +1,7 @@
 import { StyleSheet } from "react-native"
+import { CoinTheme } from "../../theme"
 
-export type Theme = "purple" | "blue" | "grey" | "torque" | "green" | "red"
-
-export const getThemeStyles = (color: Theme) => {
+export const getThemeStyles = (color: CoinTheme) => {
   switch (color) {
     case "purple":
       return StyleSheet.create({

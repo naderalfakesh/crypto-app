@@ -57,6 +57,11 @@ export const presets = {
   "header-20-22": { ...BASE, fontSize: 20, lineHeight: 22, fontWeight: "500" } as TextStyle,
 
   /**
+   * size 20 height 28
+   */
+  "header-20-28": { ...BASE, fontSize: 20, lineHeight: 28, fontWeight: "600" } as TextStyle,
+
+  /**
    * size 26 height 32
    */
   "header-26-32": { ...BASE, fontSize: 26, lineHeight: 32, fontWeight: "600" } as TextStyle,
@@ -65,6 +70,11 @@ export const presets = {
    * size 28 height 30
    */
   "header-28-30": { ...BASE, fontSize: 28, lineHeight: 30, fontWeight: "600" } as TextStyle,
+
+  /**
+   * size 18 height 22
+   */
+  "button-18-22": { ...BASE, fontSize: 18, lineHeight: 22, fontWeight: "500" } as TextStyle,
 }
 
 /**

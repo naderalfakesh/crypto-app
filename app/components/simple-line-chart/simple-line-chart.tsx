@@ -1,7 +1,8 @@
 import * as React from "react"
 import { StyleProp, ViewStyle } from "react-native"
 import { LineChart, Path } from "react-native-svg-charts"
-import { styles, getThemeStyles, Theme } from "./styles"
+import { CoinTheme } from "../../theme"
+import { styles, getThemeStyles } from "./styles"
 
 interface ShadowProps {
   line?: any
@@ -12,7 +13,7 @@ const Shadow = ({ line }: ShadowProps) => (
 
 export interface SimpleLineChartProps {
   style?: StyleProp<ViewStyle>
-  theme: Theme
+  theme: CoinTheme
   data: Array<number>
   lineWidth?: number
   contentInset?: { top?: number; right?: number; bottom?: number; left?: number }
