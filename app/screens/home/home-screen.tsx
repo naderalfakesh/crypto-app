@@ -53,7 +53,7 @@ export const HomeScreen: FC<StackScreenProps<NavigatorParamList, "home">> = func
 const styles = StyleSheet.create({
   root: {
     backgroundColor: "transparent",
-    flex: 1,
+    flexGrow: 1,
   },
   background: {
     position: "absolute",

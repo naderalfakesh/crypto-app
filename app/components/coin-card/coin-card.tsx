@@ -32,52 +32,55 @@ export const CoinCard = function CoinCard({
 }: CoinCardProps) {
   const themeStyles = getThemeStyles(theme)
   return (
-    <Shadow
-      startColor="#0001"
-      sides={["right", "bottom"]}
-      corners={["bottomRight"]}
-      radius={BORDER_RADIUS}
-      distance={5}
-    >
-      <Pressable
-        style={({ pressed }) => [styles.container, pressed && styles.cardPressed, style]}
-        onPress={onPress}
+    <View style={style}>
+      <Shadow
+        startColor="#0005"
+        sides={["right", "bottom"]}
+        corners={["bottomRight"]}
+        radius={BORDER_RADIUS}
+        distance={5}
+        offset={[2, 2]}
       >
-        <>
-          <View style={[styles.blurContent, themeStyles.blur]} />
-          <BlurView
-            blurType="regular"
-            blurAmount={100}
-            reducedTransparencyFallbackColor={BG_COLOR}
-            style={styles.blurView}
-          />
-          <View style={styles.header}>
-            {/* Replace with icon component */}
-            <View style={[styles.icon, themeStyles.icon]}>
-              <Text>B</Text>
+        <Pressable
+          style={({ pressed }) => [styles.container, pressed && styles.cardPressed]}
+          onPress={onPress}
+        >
+          <>
+            <View style={[styles.blurContent, themeStyles.blur]} />
+            <BlurView
+              blurType="regular"
+              blurAmount={100}
+              reducedTransparencyFallbackColor={BG_COLOR}
+              style={styles.blurView}
+            />
+            <View style={styles.header}>
+              {/* Replace with icon component */}
+              <View style={[styles.icon, themeStyles.icon]}>
+                <Text>B</Text>
+              </View>
+              <View>
+                <Text preset="header-16-20">{title}</Text>
+                <Text preset="body-12-14" style={styles.subtitle}>
+                  {subtitle}
+                </Text>
+              </View>
             </View>
-            <View>
-              <Text preset="header-16-20">{title}</Text>
-              <Text preset="body-12-14" style={styles.subtitle}>
-                {subtitle}
+            <SimpleLineChart
+              data={data}
+              theme={theme}
+              lineWidth={2}
+              contentInset={{ top: 5, right: 2, bottom: 5, left: 2 }}
+            />
+            <View style={styles.footer}>
+              <Text preset="header-14-18">{price}</Text>
+              {/* todo: replace increase with condition for increase and decrease */}
+              <Text preset="body-12-14" style={styles.increase}>
+                {change}
               </Text>
             </View>
-          </View>
-          <SimpleLineChart
-            data={data}
-            theme={theme}
-            lineWidth={2}
-            contentInset={{ top: 5, right: 2, bottom: 5, left: 2 }}
-          />
-          <View style={styles.footer}>
-            <Text preset="header-14-18">{price}</Text>
-            {/* todo: replace increase with condition for increase and decrease */}
-            <Text preset="body-12-14" style={styles.increase}>
-              {change}
-            </Text>
-          </View>
-        </>
-      </Pressable>
-    </Shadow>
+          </>
+        </Pressable>
+      </Shadow>
+    </View>
   )
 }
