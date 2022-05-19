@@ -5,15 +5,15 @@ import { color, spacing } from "../../theme"
  * All text will start off looking like this.
  */
 const BASE_VIEW: ViewStyle = {
-  paddingVertical: spacing[2],
-  paddingHorizontal: spacing[2],
-  borderRadius: 4,
+  paddingVertical: 14,
+  paddingHorizontal: 32,
+  borderRadius: 18,
   justifyContent: "center",
   alignItems: "center",
 }
 
 const BASE_TEXT: TextStyle = {
-  paddingHorizontal: spacing[3],
+  textTransform: "capitalize",
 }
 
 /**
@@ -27,6 +27,10 @@ export const viewPresets: Record<string, ViewStyle> = {
    */
   primary: { ...BASE_VIEW, backgroundColor: color.palette.orange } as ViewStyle,
 
+  success: { ...BASE_VIEW, backgroundColor: "rgba(69, 182, 141, 1)" } as ViewStyle,
+
+  danger: { ...BASE_VIEW, backgroundColor: "rgba(232, 80, 58, 1)" } as ViewStyle,
+
   /**
    * A button without extras.
    */
@@ -39,7 +43,7 @@ export const viewPresets: Record<string, ViewStyle> = {
 }
 
 export const textPresets: Record<ButtonPresetNames, TextStyle> = {
-  primary: { ...BASE_TEXT, fontSize: 9, color: color.palette.white } as TextStyle,
+  primary: { ...BASE_TEXT, color: color.palette.white } as TextStyle,
   link: {
     ...BASE_TEXT,
     color: color.text,
