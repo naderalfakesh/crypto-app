@@ -4,27 +4,27 @@ import { CoinTheme } from "../../theme"
 const ICON_SIZE = 36
 
 export const styles = StyleSheet.create({
+  chart: { flex: 1, paddingHorizontal: 8 },
+  coin: {
+    flexDirection: "row",
+  },
   container: {
     flexDirection: "row",
     justifyContent: "space-between",
     padding: 4,
   },
-  pressed: { backgroundColor: "rgba(255, 255, 255, 0.1)", borderRadius: 5 },
   icon: {
-    width: ICON_SIZE,
-    height: ICON_SIZE,
-    borderRadius: ICON_SIZE * 0.5,
-    overflow: "hidden",
-    justifyContent: "center",
     alignItems: "center",
+    borderRadius: ICON_SIZE * 0.5,
+    height: ICON_SIZE,
+    justifyContent: "center",
     marginRight: 8,
+    overflow: "hidden",
+    width: ICON_SIZE,
   },
+  pressed: { backgroundColor: "rgba(255, 255, 255, 0.1)", borderRadius: 5 },
+  priceChange: { color: "rgba(0, 182, 112, 1)", textAlign: "right" },
   subtitle: { color: "rgba(255,255,255,0.6)", marginTop: 2 },
-  coin: {
-    flexDirection: "row",
-  },
-  priceChange: { textAlign: "right", color: "rgba(0, 182, 112, 1)" },
-  chart: { flex: 1, paddingHorizontal: 8 },
 })
 
 export const getThemeStyles = (color: CoinTheme) => {

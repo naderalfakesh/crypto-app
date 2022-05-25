@@ -11,8 +11,8 @@ export interface ListItemProps {
   data: number[]
   title: string
   subtitle: string
-  price: string
-  change: string
+  price: number
+  change: number
 }
 
 export const ListItem = function ListItem({

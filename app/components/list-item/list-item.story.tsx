@@ -19,8 +19,8 @@ storiesOf("ListItem", module)
           data={data}
           title="Bitcoin"
           subtitle="Btc"
-          price="USDC 99,284.01"
-          change="+68.3%"
+          price={99284.01}
+          change={+68.3}
         />
       </UseCase>
     </Story>
