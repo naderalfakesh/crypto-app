@@ -13,7 +13,10 @@ function ScreenWithoutScrolling(props: ScreenProps) {
   const preset = presets.fixed
   const style = props.style || {}
   const backgroundStyle = props.backgroundColor ? { backgroundColor: props.backgroundColor } : {}
-  const insetStyle = { paddingTop: props.unsafe ? 0 : insets.top, paddingBottom: tabBarHeight }
+  const insetStyle = {
+    paddingTop: props.unsafe ? 0 : insets.top,
+    paddingBottom: tabBarHeight,
+  }
 
   return (
     <KeyboardAvoidingView

@@ -12,7 +12,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { HomeScreen } from "../screens"
 import { navigationRef, useBackButtonHandler } from "./navigation-utilities"
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
-import { Shadow } from "react-native-shadow-2"
+import NavigatorButton from "./navigator-button"
 
 export type NavigatorParamList = {
   home: undefined
@@ -33,6 +33,7 @@ const HomeStack = () => {
     </Stack.Navigator>
   )
 }
+
 const AppStack = () => {
   return (
     <Tab.Navigator
@@ -69,22 +70,14 @@ const AppStack = () => {
         name="home2"
         options={{
           tabBarLabelStyle: { display: "none" },
-          tabBarIcon: ({ color, size }) => (
-            <Shadow
-              startColor="rgba(67, 118, 254, 0.5)"
-              finalColor="rgba(67, 118, 254, 0.1)"
-              distance={2}
-              offset={[0, 1]}
-            >
-              <View
-                style={{ backgroundColor: "rgba(67, 118, 254, 1)", padding: 8, borderRadius: 30 }}
-              >
-                <MaterialCommunityIcons name="menu" color="white" size={30} />
-              </View>
-            </Shadow>
-          ),
+          tabBarIcon: () => <NavigatorButton />,
         }}
-        component={HomeStack}
+        component={() => null}
+        listeners={() => ({
+          tabPress: (e) => {
+            e.preventDefault()
+          },
+        })}
       />
       <Tab.Screen
         name="prices"
@@ -137,5 +130,5 @@ AppNavigator.displayName = "AppNavigator"
  *
  * `canExit` is used in ./app/app.tsx in the `useBackButtonHandler` hook.
  */
-const exitRoutes = ["welcome"]
+const exitRoutes = ["home"]
 export const canExit = (routeName: string) => exitRoutes.includes(routeName)
