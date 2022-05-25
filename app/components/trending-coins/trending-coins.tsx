@@ -21,7 +21,7 @@ export const TrendingCoins = function TrendingCoins({
       showsHorizontalScrollIndicator={false}
       horizontal
     >
-      {coinList.map(({ id, theme, data, title, subtitle, price, change }, index) => (
+      {coinList.map(({ id, theme, data, title, subtitle, price, change, image }, index) => (
         <CoinCard
           style={index && styles.coinCard}
           key={id}
@@ -31,6 +31,7 @@ export const TrendingCoins = function TrendingCoins({
           subtitle={subtitle}
           price={price}
           change={change}
+          image={image}
         />
       ))}
     </ScrollView>

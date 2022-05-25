@@ -1,6 +1,6 @@
 import { BlurView } from "@react-native-community/blur"
 import * as React from "react"
-import { StyleProp, View, ViewStyle, Pressable } from "react-native"
+import { StyleProp, View, ViewStyle, Pressable, Image } from "react-native"
 import { Shadow } from "react-native-shadow-2"
 import { Text } from "../text/text"
 import { BG_COLOR, BORDER_RADIUS, getThemeStyles, styles } from "./styles"
@@ -15,6 +15,7 @@ export interface CoinCardProps {
   subtitle: string
   price: number
   change: number
+  image: string
 }
 
 /**
@@ -29,6 +30,7 @@ export const CoinCard = function CoinCard({
   subtitle,
   price,
   change,
+  image,
 }: CoinCardProps) {
   const themeStyles = getThemeStyles(theme)
   return (
@@ -54,11 +56,10 @@ export const CoinCard = function CoinCard({
               style={styles.blurView}
             />
             <View style={styles.header}>
-              {/* Replace with icon component */}
-              <View style={[styles.icon, themeStyles.icon]}>
-                <Text>B</Text>
-              </View>
-              <View>
+              <Shadow startColor={"#fff3"} distance={4}>
+                <Image source={{ uri: image }} style={styles.icon} />
+              </Shadow>
+              <View style={styles.textContainer}>
                 <Text preset="header-16-20">{title}</Text>
                 <Text preset="body-12-14" style={styles.subtitle}>
                   {subtitle}
@@ -74,7 +75,7 @@ export const CoinCard = function CoinCard({
             <View style={styles.footer}>
               <Text preset="header-14-18">${+price.toFixed(2)}</Text>
               <Text preset="body-12-14" style={change < 0 ? styles.decrease : styles.increase}>
-                {`${change < 0 ? "-" : "+"} ${change.toFixed(2)}%`}
+                {`${change < 0 ? "-" : "+"} ${Math.abs(change).toFixed(2)}%`}
               </Text>
             </View>
           </>
