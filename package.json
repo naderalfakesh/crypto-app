@@ -16,7 +16,7 @@
     "format:json": "prettier --write \"app/**/*.json\"",
     "format:md": "prettier --write \"**/*.md\"",
     "format:ts": "prettier --write \"app/**/*.ts{,x}\"",
-    "lint": "eslint index.js app storybook test --fix --ext .js,.ts,.tsx && npm run format",
+    "lint": "eslint index.js app storybook test --quiet --fix --ext .js,.ts,.tsx && npm run format",
     "patch": "patch-package",
     "storybook": "start-storybook -p 9001 -c ./storybook",
     "test": "jest",
@@ -195,7 +195,12 @@
       "react-native/no-raw-text": 0,
       "react/no-unescaped-entities": 0,
       "react/prop-types": "off",
-      "space-before-function-paren": 0
+      "space-before-function-paren": 0,
+      "react-native/no-color-literals":1,
+      "react-native/no-inline-styles":1,
+      "react/display-name":1,
+      "react-native/sort-styles":0,
+      "react-native/no-unused-styles":2
     },
     "overrides": [
       {
@@ -203,10 +208,7 @@
           "app/store/**/types.ts"
         ],
         "rules": {
-          "quotes": [
-            2,
-            "camelcase"
-          ]
+          "camelcase":"off"
         }
       }
     ]
