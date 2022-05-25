@@ -38,7 +38,7 @@ export const TrendingCoins = function TrendingCoins({
 }
 
 const styles = StyleSheet.create({
-  container: { flexGrow: 0, paddingVertical: 6, marginBottom: 28 },
-  content: { paddingHorizontal: 16 },
   coinCard: { marginLeft: 16 },
+  container: { flexGrow: 0, marginBottom: 28, paddingVertical: 6 },
+  content: { paddingHorizontal: 16 },
 })

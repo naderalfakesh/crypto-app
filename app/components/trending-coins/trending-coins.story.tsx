@@ -11,8 +11,9 @@ const coinList: Coin[] = [
     title: "Bitcoin",
     subtitle: "Btc",
     theme: "purple",
-    change: "+10.32%",
-    price: "$6780",
+    change: +10.32,
+    price: 6780,
+    image: "",
     data,
   },
   {
@@ -20,8 +21,9 @@ const coinList: Coin[] = [
     title: "Ethereum",
     subtitle: "Eth",
     theme: "blue",
-    change: "+10.32%",
-    price: "$6780",
+    change: +10.32,
+    price: 6780,
+    image: "",
     data,
   },
 ]
