@@ -36,16 +36,16 @@ export const MarketStatsList = function MarketStatsList({ style, coinList }: Mar
 
 const styles = StyleSheet.create({
   container: { paddingHorizontal: 32 },
-  header: {
-    paddingVertical: 10,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-
   divider: {
-    marginVertical: 8,
     backgroundColor: "rgba(255, 255, 255, 0.1)",
     height: 2,
+    marginVertical: 8,
+  },
+
+  header: {
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingVertical: 10,
   },
 })
