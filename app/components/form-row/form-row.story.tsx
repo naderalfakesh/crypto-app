@@ -23,11 +23,7 @@ storiesOf("FormRow", module)
         text="Fully Assembled"
         usage="FormRow has many parts designed to fit together.  Here is what it looks like all assembled."
       >
-        <FormRow preset="top">
-          <Text preset="fieldLabel" style={TEXT_STYLE_OVERRIDE}>
-            Hello! I am at the top
-          </Text>
-        </FormRow>
+        <FormRow preset="top"></FormRow>
         <FormRow preset="middle">
           <Text style={TEXT_STYLE_OVERRIDE}>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi officia quo rerum
@@ -35,11 +31,7 @@ storiesOf("FormRow", module)
             possimus incidunt, obcaecati numquam officiis.
           </Text>
         </FormRow>
-        <FormRow preset="middle">
-          <Text preset="secondary" style={TEXT_STYLE_OVERRIDE}>
-            ...one more thing
-          </Text>
-        </FormRow>
+        <FormRow preset="middle"></FormRow>
         <FormRow preset="bottom">
           <Text style={TEXT_STYLE_OVERRIDE}>🎉 Footers!</Text>
         </FormRow>

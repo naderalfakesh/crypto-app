@@ -92,7 +92,7 @@ const platformCommand = Platform.select({
   android: "Cmd/Ctrl + M",
 })
 
-export const DemoScreen: FC<StackScreenProps<NavigatorParamList, "demo">> = ({ navigation }) => {
+export const DemoScreen: FC<StackScreenProps<NavigatorParamList, "home">> = ({ navigation }) => {
   const goBack = () => navigation.goBack()
   const { data, isLoading, isFetching, isError } = useServerStatusQuery(undefined)
 
@@ -136,7 +136,7 @@ export const DemoScreen: FC<StackScreenProps<NavigatorParamList, "demo">> = ({ n
           style={DEMO}
           textStyle={DEMO_TEXT}
           tx="demoScreen.demoList"
-          onPress={() => navigation.navigate("demoList")}
+          onPress={() => navigation.navigate("home")}
         />
         <Image source={logoIgnite} style={IGNITE} />
         <View style={LOVE_WRAPPER}>

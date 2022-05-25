@@ -85,10 +85,8 @@ const FOOTER_CONTENT: ViewStyle = {
   paddingHorizontal: spacing[4],
 }
 
-export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> = ({
-  navigation,
-}) => {
-  const nextScreen = () => navigation.navigate("demo")
+export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "home">> = ({ navigation }) => {
+  const nextScreen = () => navigation.navigate("home")
 
   return (
     <View testID="WelcomeScreen" style={FULL}>
@@ -100,7 +98,7 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
           <Text style={ALMOST} text="almost" />
           <Text style={TITLE} text="!" />
         </Text>
-        <Text style={TITLE} preset="header" tx="welcomeScreen.readyForLaunch" />
+        <Text style={TITLE} tx="welcomeScreen.readyForLaunch" />
         <Image source={bowserLogo} style={BOWSER} />
         <Text style={CONTENT}>
           This probably isn't what your app is going to look like. Unless your designer handed you

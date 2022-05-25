@@ -34,12 +34,12 @@ storiesOf("Text", module)
       </UseCase>
       <UseCase text="bold" usage="Used for bolded body text.">
         <View style={VIEWSTYLE}>
-          <Text preset="bold">Osnap! I'm puffy.</Text>
+          <Text>Osnap! I'm puffy.</Text>
         </View>
       </UseCase>
       <UseCase text="header" usage="Used for major section headers.">
         <View style={VIEWSTYLE}>
-          <Text preset="header">Behold!</Text>
+          <Text>Behold!</Text>
         </View>
       </UseCase>
     </Story>
@@ -72,7 +72,7 @@ storiesOf("Text", module)
         <View style={VIEWSTYLE}>
           <Text>
             {" "}
-            Hello <Text preset="bold">bolded</Text> World.
+            Hello <Text>bolded</Text> World.
           </Text>
         </View>
       </UseCase>
@@ -84,7 +84,7 @@ storiesOf("Text", module)
         <View style={viewStyleArray}>
           <Text>
             {" "}
-            Hello <Text preset="bold">bolded</Text> World.
+            Hello <Text>bolded</Text> World.
           </Text>
         </View>
       </UseCase>

@@ -42,7 +42,7 @@ const FLAT_LIST: ViewStyle = {
   paddingHorizontal: spacing[4],
 }
 
-export const DemoListScreen: FC<StackScreenProps<NavigatorParamList, "demoList">> = ({
+export const DemoListScreen: FC<StackScreenProps<NavigatorParamList, "home">> = ({
   navigation,
 }) => {
   const goBack = () => navigation.goBack()
