@@ -1,4 +1,4 @@
-import { create, ApisauceConfig, ApiErrorResponse, ApiOkResponse } from "apisauce"
+import { create, ApisauceConfig } from "apisauce"
 import { DEFAULT_API_CONFIG } from "./api-config"
 import { BaseQueryFn } from "@reduxjs/toolkit/query"
 
@@ -17,8 +17,8 @@ export const customBaseQuery = (): BaseQueryFn<
     data?: ApisauceConfig["data"]
     params?: ApisauceConfig["params"]
   },
-  ApiOkResponse<any>,
-  ApiErrorResponse<any>
+  unknown,
+  unknown
 > => async ({ url, method, data, params }) => {
   try {
     let result
