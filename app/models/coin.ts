@@ -4,8 +4,9 @@ export interface Coin {
   id: string
   title: string
   subtitle: string
-  price: string
-  change: string
+  price: number
+  change: number
   data: number[]
   theme: CoinTheme
+  image: string
 }
