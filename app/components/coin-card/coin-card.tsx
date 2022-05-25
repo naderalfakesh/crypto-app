@@ -13,8 +13,8 @@ export interface CoinCardProps {
   onPress?: () => void
   title: string
   subtitle: string
-  price: string
-  change: string
+  price: number
+  change: number
 }
 
 /**
@@ -69,13 +69,12 @@ export const CoinCard = function CoinCard({
               data={data}
               theme={theme}
               lineWidth={2}
-              contentInset={{ top: 5, right: 2, bottom: 5, left: 2 }}
+              contentInset={{ top: 15, right: 2, bottom: 15, left: 2 }}
             />
             <View style={styles.footer}>
-              <Text preset="header-14-18">{price}</Text>
-              {/* todo: replace increase with condition for increase and decrease */}
-              <Text preset="body-12-14" style={styles.increase}>
-                {change}
+              <Text preset="header-14-18">${+price.toFixed(2)}</Text>
+              <Text preset="body-12-14" style={change < 0 ? styles.decrease : styles.increase}>
+                {`${change < 0 ? "-" : "+"} ${change.toFixed(2)}%`}
               </Text>
             </View>
           </>
